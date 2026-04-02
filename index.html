@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henkish · Space</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #101010;
+            background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url('https://xatimg.com/image/8Y5HnZSS8gkL.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1, p {
+            text-align: center;
+            line-height: 1.8;
+            font-family: Lora, serif;
+            margin: 10px 0;
+        }
+
+        .glowIn {
+            color: white;
+            white-space: pre-wrap;
+        }
+
+        .glowIn span {
+            display: inline-block;
+            opacity: 0;
+            animation: glow-in 0.8s both;
+        }
+
+        /* الكلاس المسؤول عن تلوين القلب */
+        .heart-red {
+            color: #ff0000 !important;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        @keyframes glow-in {
+            from { opacity: 0; }
+            65% { opacity: 1; text-shadow: 0 0 25px white; }
+            75% { opacity: 1; }
+            to { opacity: 0.7; }
+        }
+
+        .videos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        .videos iframe {
+            width: 200px;
+            height: 135px;
+            border: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .videos iframe:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="glowIn">Hello,нєηкιѕн ,</h1>
+    <p class="glowIn">I'm xats trader and I love trading very much and selling and buying ID's</p>
+    <p class="glowIn">iEgypt (106080)) ❤️  DodoLove14 (1541187216</p>
+    <p class="glowIn">нєηкιѕн ❤️ ժօLLվ</p>
+
+    <div class="videos">
+        <iframe src="https://www.youtube.com/embed/VkH3aMIWntw"></iframe>
+        <iframe src="https://www.youtube.com/embed/pDy8B_r81vY"></iframe>
+        <iframe src="https://www.youtube.com/embed/YOP-RhVuMLU"></iframe>
+        <iframe src="https://www.youtube.com/embed/VIICjoWQWlg"></iframe>
+        <iframe src="https://www.youtube.com/embed/Us3y7js9SO8"></iframe>
+        <iframe src="https://www.youtube.com/embed/nQAq9v-zOsc"></iframe>
+    </div>
+
+    <script>
+        "use strict";
+        let glowInTexts = document.querySelectorAll(".glowIn");
+        glowInTexts.forEach(glowInText => {
+            let letters = glowInText.textContent.split("");
+            glowInText.textContent = "";
+            letters.forEach((letter, i) => {
+                let span = document.createElement("span");
+                span.textContent = letter;
+                
+                // فحص إذا كان الحرف هو رمز القلب لإعطائه اللون الأحمر
+                if (letter === "❤️" || letter === "❤") {
+                    span.classList.add("heart-red");
+                }
+
+                span.style.animationDelay = `${i * 0.05}s`;
+                glowInText.append(span);
+            });
+        });
+    </script>
+</body>
+</html>
